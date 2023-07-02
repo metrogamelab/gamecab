@@ -6,7 +6,7 @@ ifeq ($(DEBUG), 1)
    OPTIMIZE=-O0
 endif
 CFLAGS+=-g -Wall $(OPTIMIZE) -DDATA_DIR=\"$(DATA_DIR)\"
-LDFLAGS+=-lGL -lSDL2 -lSDL2_image -lSDL2_gfx -lSDL2_ttf -lSDL2_mixer -lGLU -lxml2
+LDFLAGS+=-lGL -lSDL2 -lSDL2_image -lSDL2_gfx -lSDL2_ttf -lSDL2_mixer -lGLU -lxml2 -z muldefs
 INCLUDES=-I./include -I/usr/include/libxml2
 
 INSTALL=/usr/bin/install -c

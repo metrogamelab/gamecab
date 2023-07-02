@@ -21,7 +21,7 @@ can be edited in the Makefile).
 ### Install On Debian Variants:
 ```
 sudo apt-get install gcc make libc6-dev
-sudo apt-get install libglut-dev libsdl1.2-dev libsdl-image1.2-dev libsdl-gfx1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libswscale-dev libxml2-dev zlib1g-dev
+sudo apt-get install libglut-dev libsdl2-dev libsdl2-image-dev libsdl2-gfx-dev libsdl2-mixer-dev libsdl2-ttfdev libswscale-dev libxml2-dev zlib1g-dev
 ```
 
 License
