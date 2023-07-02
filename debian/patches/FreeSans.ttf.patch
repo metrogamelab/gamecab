@@ -1,0 +1,14 @@
+Index: gamecab_sergio/config.c
+===================================================================
+--- gamecab_sergio.orig/config.c	2014-08-11 00:17:02.000000000 -0300
++++ gamecab_sergio/config.c	2014-08-11 00:20:58.035230094 -0300
+@@ -41,7 +41,8 @@
+ static const char *default_dir 				= ".gamecab"; /* Relative to user's home */
+ static const char *default_theme_dir		= "/themes";
+ static const char *default_background		= "/pixmaps/default_background.jpg";
+-static const char *default_font 		= "/fonts/FreeSans.ttf";
++//static const char *default_font 		= "/fonts/FreeSans.ttf";
++static const char *default_font 			= "/../fonts/truetype/freefont/FreeSans.ttf"; // FreeSans.ttf is in /usr/share/fonts/truetype/freefont/FreeSans.ttf
+ static const char *default_menu_texture		= "/pixmaps/menu_item.png";
+ static const char *default_submenu_texture	= "/pixmaps/submenu_item.png";
+ static const char *default_back_texture		= "/pixmaps/button_blue.png";

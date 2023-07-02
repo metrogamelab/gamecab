@@ -1,0 +1,30 @@
+# Metro Game Cab
+Metro Game Cab is a simplified front-end for emulators based on Cabrio, a emulator front-end that is no longer actively developed. This emulator is a front-end primarily designed for use with arcade
+cabinets. It features a simple graphical interface which is easy to use
+with limited controls (e.g. a joystick).
+
+Installation
+------------
+You will need the following libraries and their headers/development packages:
+  * SDL2
+  * SDL2_image
+  * SDL2_gfx
+  * SDL2_mixer
+  * SDL2_ttf
+  * glut
+  * libxml2
+
+Compile the program by running 'make' in this directory. Install by running
+'make install' (this will usually have to be done as root, but the location
+can be edited in the Makefile).
+
+### Install On Debian Variants:
+```
+sudo apt-get install gcc make libc6-dev
+sudo apt-get install libglut-dev libsdl1.2-dev libsdl-image1.2-dev libsdl-gfx1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libswscale-dev libxml2-dev zlib1g-dev
+```
+
+License
+-------
+Copyright (c) 2023 - Metro Game Lab <ops@metrogamelab.com>
+Distributed under the GNU General Public License (see the COPYING file for details).

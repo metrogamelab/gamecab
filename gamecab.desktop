@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Metro Game Cab
+GenericName=Front End for Emulators
+Comment=Simple Graphical front end for video game emulators
+Exec=gamecab %f
+Categories=Game;Emulator;

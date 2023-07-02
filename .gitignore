@@ -1,0 +1,11 @@
+*.o
+gamecab
+
+.bzr
+.bzrignore
+.pc
+
+debian/gamecab.debhelper.log
+debian/gamecab.substvars
+debian/gamecab
+debian/files

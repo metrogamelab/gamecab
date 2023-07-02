@@ -1,0 +1,18 @@
+Source: gamecab
+Section: otherosfs
+Priority: optional
+Maintainer: Metro Game Lab <games@metrogamelab.com>
+Build-Depends: debhelper (>= 9), libsdl2-dev, libsdl2-image-dev, libsdl2-gfx-dev, libsdl2-mixer-dev, libsdl2-ttf-dev, libxml2-dev
+#  libswscale-dev
+Standards-Version: 3.9.6
+Homepage: https://www.metrogamelab.com/gamecab
+
+Package: gamecab
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, fonts-freefont-ttf | ttf-freefont
+Description: Front end for video game emulators
+ Metro Game Cabinet is a graphical front end for video game emulators originally designed
+ for use on arcade cabinets, but also usable on your regular computer.
+ .
+ It features a simple graphical interface which is easy to use with limited
+ controls (e.g. a joystick).
