@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 #include "sdl_wrapper.h"
 #include "ogl.h"
 #include "font.h"
@@ -50,14 +51,13 @@ int main( int argc, char *arvg[] ) {
 	int config_status = 0;
 	int event = EVENT_SELECT;
 
-
 	// Initialise pseudo random generator   
 	srand( time( NULL ) );
 
-#ifdef __WIN32__
-	freopen( "cabrio.out", "w", stdout );
-	freopen( "cabrio.err", "w", stderr );
-#endif
+	#ifdef __WIN32__
+		freopen( "gamecab.out", "w", stdout );
+		freopen( "gamecab.err", "w", stderr );
+	#endif
 
 	config_status = config_open( NULL );
 	if( config_status == -1 )

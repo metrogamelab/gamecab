@@ -9,6 +9,7 @@ static const int AUDIO_CHUNK_SIZE = 1024;
 static Mix_Chunk *sounds[NUM_SOUNDS];
 static char *names[] = { "back", "blip", "no", "select" };
 static int mixer_open = 0;
+Mix_Music *music = NULL;
 
 int sound_open_mixer( void ) {
 	if( !mixer_open ) {
@@ -123,7 +124,7 @@ void playmusic(void) {
           sel_music--;
         }
         char music_name[CONFIG_FILE_NAME_LENGTH];
-        snprintf( music_name, CONFIG_FILE_NAME_LENGTH, "%s%s", config_get()->iface.theme.music, e->d_name );
+        snprintf( music_name, CONFIG_FILE_NAME_LENGTH, "%s%s", config_get()->iface.theme.music, e->d_name ) < 0 ? abort() : (void)0;
         music = Mix_LoadMUS( music_name );
       }
       closedir( dir );

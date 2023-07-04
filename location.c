@@ -120,7 +120,7 @@ int location_try_directory( const char *dir, const char *filename, char *path ) 
 			}
 		}
 		else {
-			strncpy( path, test, CONFIG_FILE_NAME_LENGTH );
+			memcpy( path, test, CONFIG_FILE_NAME_LENGTH );
 			return 0;
 		}
 	}
@@ -133,7 +133,7 @@ int location_get_path( const char *type, const char *filename, char *path ) {
 
 	if( type && filename && filename[0]) {
 		if( location_absolute( filename ) == 0 ) {
-			strncpy( path, filename, CONFIG_FILE_NAME_LENGTH );
+			memcpy( path, filename, CONFIG_FILE_NAME_LENGTH );
 			return 0;
 		}
 		
@@ -145,7 +145,7 @@ int location_get_path( const char *type, const char *filename, char *path ) {
 		}
 		
 		/* Not found, return the original filename for later reference. */
-		strncpy( path, filename, CONFIG_FILE_NAME_LENGTH );
+		memcpy( path, filename, CONFIG_FILE_NAME_LENGTH );
 	}
 
 	return -1;
@@ -154,7 +154,7 @@ int location_get_path( const char *type, const char *filename, char *path ) {
 int location_get_theme_path( const char *filename, char *path ) {
 	if( filename ) {
 		if( location_absolute( filename ) == 0 ) {
-			strncpy( path, filename, CONFIG_FILE_NAME_LENGTH );
+			memcpy( path, filename, CONFIG_FILE_NAME_LENGTH );
 			return 0;		
 		}
 
@@ -163,7 +163,7 @@ int location_get_theme_path( const char *filename, char *path ) {
 		}
 
 		/* Not found, return the original filename for later reference. */
-		strncpy( path, filename, CONFIG_FILE_NAME_LENGTH );
+		memcpy( path, filename, CONFIG_FILE_NAME_LENGTH );
 	}
 	
 	return -1;
@@ -183,9 +183,9 @@ int location_get_match( const char *type, const char *filename, char *path ) {
 		pos = strrchr( filename, '/' );
 #endif
 		if( pos )
-			strncpy( search, pos+1, CONFIG_FILE_NAME_LENGTH );
+			memcpy( search, pos+1, CONFIG_FILE_NAME_LENGTH );
 		else
-			strncpy( search, filename, CONFIG_FILE_NAME_LENGTH );
+			memcpy( search, filename, CONFIG_FILE_NAME_LENGTH );
 		
 		pos = strrchr( search, '.' );
 		if( pos )

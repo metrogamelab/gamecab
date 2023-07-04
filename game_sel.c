@@ -356,7 +356,8 @@ int game_sel_event( int event ) {
 		case EVENT_LIST1:
 			snap_clear();	
 			sound_play( SOUND_SELECT );
-			game_list_filter_category( "Lists" , list_choice[0]);
+			
+			game_list_filter_category( "Lists" , category_name(0));
 			game_sel_got_focus();
 			break;
 
@@ -364,7 +365,7 @@ int game_sel_event( int event ) {
 			snap_clear();	
 			sound_play( SOUND_SELECT );
 			sound_play( SOUND_SELECT );
-			game_list_filter_category( "Lists" , list_choice[1]);
+			game_list_filter_category( "Lists" , category_name(1));
 			game_sel_got_focus();
 			break;
 
@@ -372,7 +373,7 @@ int game_sel_event( int event ) {
 			snap_clear();	
 			sound_play( SOUND_SELECT );
 			sound_play( SOUND_SELECT );
-			game_list_filter_category( "Lists" , list_choice[2]);
+			game_list_filter_category( "Lists" , category_name(2));
 			game_sel_got_focus();
 			break;
 
@@ -380,7 +381,7 @@ int game_sel_event( int event ) {
 			snap_clear();	
 			sound_play( SOUND_SELECT );
 			sound_play( SOUND_SELECT );
-			game_list_filter_category( "Lists" , list_choice[3]);
+			game_list_filter_category( "Lists" , category_name(3));
 			game_sel_got_focus();
 			break;
 
@@ -388,7 +389,7 @@ int game_sel_event( int event ) {
 			snap_clear();	
 			sound_play( SOUND_SELECT );
 			sound_play( SOUND_SELECT );
-			game_list_filter_category( "Lists" , list_choice[4]);
+			game_list_filter_category( "Lists" , category_name(4));
 			game_sel_got_focus();
 			break;
 		default:

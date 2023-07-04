@@ -389,25 +389,6 @@ int game_list_create( void ) {
 	game_start = game_list_sort( game_start );
 	game_list_unfilter();
 
-/*  if( game_start ) {
-		struct game *g = game_start;
-		while( g ) {
-			struct game_media *gm = g->media;
-			struct game_category *gc = g->categories;
-
-			printf("Game: %s\n", g->name );
-			while( gm ) {
-				printf("  '%d/%s' = '%s'\n", gm->type, gm->subtype, gm->file_name );
-				gm = gm->next;
-			}
-			while( gc ) {
-				printf("  '%s' = '%s'\n", gc->name, gc->value );
-				gc = gc->next;
-			}
-			g = g->all_next;
-			if( g == game_start ) break;
-		}
-	} */
 	return 0;
 }
 
@@ -481,7 +462,7 @@ int game_list_unfilter( void ) {
         FILE* file = NULL;
 	struct passwd *passwd = getpwuid(getuid());
 	char lock[CONFIG_FILE_NAME_LENGTH];
-        snprintf( lsave_filename, CONFIG_FILE_NAME_LENGTH, "%s/%s", passwd->pw_dir, lfilename );
+        snprintf( lsave_filename, CONFIG_FILE_NAME_LENGTH, "%s/%s", passwd->pw_dir, lfilename ) < 0 ? abort() : (void)0;
 
         file = fopen( lsave_filename, "r" );
         if( file == NULL ) {

@@ -5,9 +5,14 @@
 
 struct category *category_start;
 static int count = 0;
+char *list_choice[5] = {NULL};
 
 int category_count( void ) {
 	return count;
+}
+
+char* category_name( int index ) {
+	return list_choice[index];
 }
 
 void category_add( struct category *category, struct category *after ) {
@@ -80,7 +85,7 @@ int category_value_add( struct category *category, char *name ) {
 					list_choice[i]=name;
 					break;
 			}
-		i++;
+			i++;
 		}
 	
 		if( after ) {
@@ -193,4 +198,3 @@ struct category *category_get( const char *name ) {
 	}
 	return NULL;
 }
-

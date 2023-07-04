@@ -2,11 +2,12 @@
 #include <sys/types.h>
 #include <errno.h>
 #ifdef __unix__
-#include <sys/wait.h>
+	#include <sys/wait.h>
 #endif
 #ifdef __WIN32__
-#include <windows.h>
+	#include <windows.h>
 #endif
+
 #include "emulator.h"
 #include "sdl_wrapper.h"
 #include "ogl.h"
@@ -195,6 +196,8 @@ int emulator_exec( struct game *game ) {
 int emulator_run( struct game *game ) {
 	int ret = 0;
 	struct passwd *passwd = getpwuid(getuid());
+	Mix_Music *music = NULL;
+
 	if (music){
 		Mix_HaltMusic();
 		music = NULL;
@@ -203,7 +206,7 @@ int emulator_run( struct game *game ) {
 	sdl_free();
 	FILE* file = NULL;
 
-	snprintf( save_filename, CONFIG_FILE_NAME_LENGTH, "%s/%s", passwd->pw_dir, filename );
+	snprintf( save_filename, CONFIG_FILE_NAME_LENGTH, "%s/%s", passwd->pw_dir, filename ) < 0 ? abort() : (void)0;
 
 	file = fopen( save_filename, "w+" );
         if( file == NULL ) {
